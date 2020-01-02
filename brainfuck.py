@@ -1,3 +1,6 @@
+import sys
+
+
 class Node:
     def __init__(self, value, children, parent):
         self.value = value
@@ -8,7 +11,7 @@ class Node:
         return f"Value : {self.value}, Children: {[str(i) for i in self.children]}"
 
 
-with open("test.bf", "r") as f:
+with open(sys.argv[1], "r") as f:
     code = f.read()
 code = "".join(
     list(filter(lambda x: x in ['+', '-', '[', ']', '<', '>', '.', ','], code)))
