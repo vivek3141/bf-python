@@ -59,4 +59,7 @@ while(cptr < len(code)):
     elif i == ".":
         print(chr(memory[ptr]), end='')
 
+    elif i == ",":
+        memory[ptr] = input()
+
     cptr += 1
