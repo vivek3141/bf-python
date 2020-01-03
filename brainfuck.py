@@ -1,16 +1,5 @@
 import sys
 
-
-class Node:
-    def __init__(self, value, children, parent):
-        self.value = value
-        self.children = children
-        self.parent = parent
-
-    def __str__(self):
-        return f"Value : {self.value}, Children: {[str(i) for i in self.children]}"
-
-
 with open(sys.argv[1], "r") as f:
     code = f.read()
 code = "".join(
@@ -18,23 +7,6 @@ code = "".join(
 
 memory = [0]
 ptr = 0
-
-"""
-old method
-tree = Node(None, [], None)
-tmap = {}
-c = tree
-
-for n, i in enumerate(code):
-    if i == "[":
-        c.children.append(Node(n, [], c))
-        c = c.children[-1]
-
-    elif i == "]":
-        tmap[c.value] = n
-        tmap[n] = c.value
-        c = c.parent
-"""
 
 stack = []
 tmap = {}
