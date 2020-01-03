@@ -19,6 +19,8 @@ code = "".join(
 memory = [0]
 ptr = 0
 
+"""
+old method
 tree = Node(None, [], None)
 tmap = {}
 c = tree
@@ -32,6 +34,19 @@ for n, i in enumerate(code):
         tmap[c.value] = n
         tmap[n] = c.value
         c = c.parent
+"""
+
+stack = []
+tmap = {}
+
+for n, i in enumerate(code):
+    if i == "[":
+        stack.append(n)
+    elif i == "]":
+        v = stack.pop()
+        tmap[v] = n
+        tmap[n] = v
+
 cptr = 0
 
 while(cptr < len(code)):
