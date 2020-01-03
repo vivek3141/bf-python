@@ -47,6 +47,6 @@ while(cptr < len(code)):
         print(chr(memory[ptr]), end='')
 
     elif i == ",":
-        memory[ptr] = input()
+        memory[ptr] = int(input())
 
     cptr += 1
